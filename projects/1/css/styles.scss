@@ -1,0 +1,79 @@
+/*
+@use 'encabezados';
+@use 'footer';
+*/
+
+$fontPrincipal: sans-serif;
+$backgroundcolorPrincipal: #555;
+$colorPrincipal: white;
+$colorSec: black;
+
+body{
+	background-color: $backgroundcolorPrincipal;
+	font-family: $fontPrincipal;
+	color: $colorPrincipal;
+}
+
+h1{
+	color: $colorSec;
+}
+
+.clase{
+	margin: 0 auto;
+	padding: 0;
+	
+	.menu{
+		margin-top: 10px;
+		h1{
+			font-size: 40px;
+		}
+	}
+}
+
+@mixin crearBorder() {
+	border: 5px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 5px black;
+}
+
+@mixin crearBorder_2($color,$size,$shadow) {
+	border: $size solid $color;
+	border-radius: $size;
+	box-shadow: 0 0 $size $shadow;
+}
+
+.clase{
+	@include crearBorder();
+}
+
+.navegacion{
+	@include crearBorder_2(black,20px,yellow);
+}
+
+%cajaNormal {
+	border: 1px solid gray;
+	color: white;
+}
+
+.caja{
+	@extend %cajaNormal;
+}
+
+.cajaRoja{
+	@extend %cajaNormal;
+	color: red;
+	border: 1px solid red;
+}
+
+$wrap: 1200px;
+$caja: 300px;
+
+.wrap{
+	background-color: white;
+}
+
+.caja{
+	width: $caja/$wrap * 100%;
+	margin: 10px;
+}
+

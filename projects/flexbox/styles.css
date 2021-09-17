@@ -1,0 +1,61 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.cajas {
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row; /*FLEXBOX*/
+  flex-wrap: wrap; /*FLEXBOX*/
+  flex-flow: row wrap; /*FLEXBOX*/
+  justify-content: space-between; /*FLEXBOX Justificar elementos dentro*/
+}
+
+.cajas,
+.caja {
+  border: 5px solid black;
+}
+
+.caja {
+  flex-grow: 1; /*FLEXBOX RESPONSIVE*/
+  color: white;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 17px;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.red {
+  flex-grow: 4; /*FLEXBOX - Espacio a ocupar*/
+  order: 3; /*FLEXBOX*/
+  background-color: red;
+}
+
+.blue {
+  flex-grow: 3; /*FLEXBOX - Espacio a ocupar*/
+  order: 2; /*FLEXBOX*/
+  background-color: blue;
+}
+
+.orange {
+  /*OCupa el menor espacio posible*/
+  flex-shrink: 0;
+  flex-grow: 1;
+  order: 1; /*FLEXBOX*/
+  background-color: orange;
+}
+
+.yellow {
+  order: 4; /*FLEXBOX*/
+  flex-basis: calc((100% / 3)-68px);
+  background-color: yellow;
+  color: black;
+}
